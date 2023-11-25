@@ -5,7 +5,10 @@
     "module": "es6",
     "target": "es5",
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "allowUmdGlobalAccess": true,
+    "moduleResolution": "bundler",
+    "sourceMap": true
   },
-  "files": ["src/index.ts"]
+  "files": ["src/index.tsx"]
 }
