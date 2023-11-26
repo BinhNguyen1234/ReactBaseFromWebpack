@@ -20,7 +20,7 @@
             2,
             {
                 "selector": "variable",
-                "format": ["camelCase"],
+                "format": ["camelCase", "PascalCase"],
                 "leadingUnderscore": "allow",
                 "trailingUnderscore": "allow"
             }
@@ -38,6 +38,7 @@
                 "allowAny": false,
                 "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": true
             }
-        ]
+        ],
+        "promise/param-names": "off"
     }
 }

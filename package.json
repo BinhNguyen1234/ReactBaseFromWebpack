@@ -5,13 +5,13 @@
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack  --node-env=production --config webpack.local.config.js",
+        "build": "webpack  --node-env=production --config webpack.production.config.js",
         "build:dev": "webpack  --config webpack.local.config.js",
         "build:prod": "webpack  --node-env=production --config webpack.production.config.js",
         "watch": "webpack --watch",
         "dev": "webpack serve --node-env=development --config webpack.local.config.js",
         "serve-prod": "webpack serve --node-env=production --config webpack.production.config.js",
-        "online": "http-serve dist",
+        "online": "npx http-server ./dist -a localhost -p 7000 -o -c1",
         "check-package": "depcheck",
         "lint": "eslint"
     },
