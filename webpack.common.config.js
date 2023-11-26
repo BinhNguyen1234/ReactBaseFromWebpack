@@ -39,6 +39,13 @@ const configCommon = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js']
+    }, 
+    devServer: {
+        static: {
+            directory: path.join(_dirName, 'dist'),
+            
+        },
+        historyApiFallback: true
     }
 }
 
