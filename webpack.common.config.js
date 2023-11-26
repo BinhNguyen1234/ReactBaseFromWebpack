@@ -27,7 +27,7 @@ const configCommon = {
         rules: [
             {
                 test: /\.(ts|tsx)$/i,
-                use: [{ loader: 'ts-loader' }],
+                use: [{ loader: ['ts-loader', 'babel-loader'] }],
                 exclude: ['/node_modules/'],
                 sideEffects: true
             },
@@ -39,11 +39,10 @@ const configCommon = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js']
-    }, 
+    },
     devServer: {
         static: {
-            directory: path.join(_dirName, 'dist'),
-            
+            directory: path.join(_dirName, 'dist')
         },
         historyApiFallback: true
     }

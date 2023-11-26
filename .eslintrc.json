@@ -3,7 +3,13 @@
         "browser": true,
         "es2020": true
     },
-    "ignorePatterns": ["webpack.common.config.js","webpack.production.config.js","webpack.local.config.js", "postcss.config.js"],
+    "ignorePatterns": [
+        "webpack.common.config.js",
+        "webpack.production.config.js",
+        "webpack.local.config.js", 
+        "postcss.config.js",
+        "/dist/*"
+    ],
     "extends": ["standard-with-typescript"],
     "parserOptions": {
         "ecmaVersion": "latest",
