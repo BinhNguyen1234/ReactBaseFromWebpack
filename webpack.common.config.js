@@ -28,8 +28,8 @@ const configCommon = {
             {
                 test: /\.(ts|tsx)$/i,
                 use: [
-                    { loader: 'ts-loader' }
-                    // // { loader: 'babel-loader' }
+                    // { loader: 'ts-loader' },
+                    { loader: 'babel-loader' }
                 ],
                 exclude: ['/node_modules/'],
                 sideEffects: true

@@ -13,7 +13,8 @@
         "serve-prod": "webpack serve --node-env=production --config webpack.production.config.js",
         "online": "npx http-server ./dist -a localhost -p 7000 -o -c1",
         "check-package": "depcheck",
-        "lint": "eslint"
+        "lint": "eslint",
+        "analyze-prod": "webpack --node-env=production --config webpack.production.config.js --profile --json > stats.json"
     },
     "author": "BinhNguyen",
     "license": "ISC",
