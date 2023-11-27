@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 // import NavBar from '../layout/LayoutCommon'
 import { type ComponentType, Suspense, lazy } from 'react'
-import NavBar from '$r/layout/LayoutCommon'
+import App from '@/app/app'
 
 const HomePage = lazy(async () => {
     return await import('./Home')
@@ -22,7 +22,7 @@ const DefaultPage = lazy(async () => {
 })
 const router = createBrowserRouter([
     {
-        element: <NavBar />,
+        element: <App />,
         path: '/',
         children: [
             {
@@ -36,5 +36,4 @@ const router = createBrowserRouter([
         ]
     }
 ])
-
 export default router

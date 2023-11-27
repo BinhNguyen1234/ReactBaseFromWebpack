@@ -9,27 +9,31 @@ import 'webpack-dev-server'
 const _fileName = fileURLToPath(import.meta.url)
 const _dirName = path.dirname(_fileName)
 const configCommon = {
-    entry: path.resolve(_dirName, 'src', 'app' ,'index.tsx'),
+    entry: path.resolve(_dirName, 'src', 'index.tsx'),
     output: {
         path: path.resolve(_dirName, 'dist')
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(_dirName, 'src', 'app' ,'index.html'),
+            template: path.resolve(_dirName, 'src', 'app', 'index.html'),
             filename: 'index.html'
         }),
         new Dotenv(),
         new CleanWebpackPlugin(),
         new webpack.ProgressPlugin(),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        new webpack.ProvidePlugin({
+            React: 'react',
+            _: 'lodash'
+        })
     ],
     module: {
         rules: [
             {
                 test: /\.(ts|tsx)$/i,
                 use: [
-                    // { loader: 'ts-loader' },
-                    { loader: 'babel-loader' }
+                    { loader: 'ts-loader' }
+                    // { loader: 'babel-loader' }
                 ],
                 exclude: ['/node_modules/'],
                 sideEffects: true
@@ -43,7 +47,7 @@ const configCommon = {
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js'],
         alias: {
-            "$r": path.resolve(_dirName,"src")
+            '@': path.resolve(_dirName, 'src')
         }
     },
     devServer: {
