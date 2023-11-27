@@ -9,9 +9,13 @@
         "allowUmdGlobalAccess": true,
         "moduleResolution": "bundler",
         "sourceMap": true,
-        "strictNullChecks": false
+        "strictNullChecks": false,
+        "paths": {
+            "$r/*": ["src/*"]
+        },
+        "baseUrl": "./"
     },
-    "files": ["src/index.tsx"],
+    "files": ["src/app/index.tsx"],
     "include": ["**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules", "dist"],
 }

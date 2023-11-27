@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 // import NavBar from '../layout/LayoutCommon'
 import { type ComponentType, Suspense, lazy } from 'react'
-import NavBar from '../layout/LayoutCommon'
+import NavBar from '$r/layout/LayoutCommon'
 
 const HomePage = lazy(async () => {
     return await import('./Home')
