@@ -2,7 +2,7 @@
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
         "noImplicitAny": true,
-        "module": "ES2020",
+        "module": "es2020",
         "target": "es5",
         "allowJs": true,
         "jsx": "react-jsx",

@@ -2,8 +2,8 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import webpack from 'webpack'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import Dotenv from 'dotenv-webpack'
 import 'webpack-dev-server'
 const _fileName = fileURLToPath(import.meta.url)
@@ -27,7 +27,10 @@ const configCommon = {
         rules: [
             {
                 test: /\.(ts|tsx)$/i,
-                use: [{ loader: ['ts-loader', 'babel-loader'] }],
+                use: [
+                    { loader: 'ts-loader' },
+                    // // { loader: 'babel-loader' }
+                ],
                 exclude: ['/node_modules/'],
                 sideEffects: true
             },
