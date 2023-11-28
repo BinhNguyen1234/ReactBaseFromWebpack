@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function NavBar (): JSX.Element {
     return (
@@ -12,7 +12,6 @@ export default function NavBar (): JSX.Element {
                     <NavLink to="/"> Default</NavLink>
                 </li>
             </ul>
-            <Outlet></Outlet>
         </>
     )
 }
