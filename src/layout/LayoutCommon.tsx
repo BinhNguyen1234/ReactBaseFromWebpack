@@ -6,10 +6,10 @@ export default function NavBar (): JSX.Element {
         <>
             <ul>
                 <li>
-                    <NavLink to="/home"> Home </NavLink>
+                    <NavLink to="/increment"> Increment page </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/"> Default</NavLink>
+                    <NavLink to="/decrement"> Decrement page</NavLink>
                 </li>
             </ul>
         </>

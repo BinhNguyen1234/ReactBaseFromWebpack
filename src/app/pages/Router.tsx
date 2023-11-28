@@ -3,16 +3,16 @@ import { createBrowserRouter } from 'react-router-dom'
 import { type ComponentType, Suspense, lazy } from 'react'
 import App from '@/app/app'
 
-const HomePage = lazy(async () => {
-    return await import('./Home')
+const Increment = lazy(async () => {
+    return await import('./Increment')
 })
 /**
  * this is mockup incase lazy load take 3s to import component, in real life, there none coding like this
  */
-const DefaultPage = lazy(async () => {
+const Decrement = lazy(async () => {
     const c = new Promise((rs, rj) => {
         setTimeout(() => {
-            rs(import('./Default'))
+            rs(import('./Decrement'))
         }, 3000)
     })
     const a = c.then(rs => {
@@ -26,12 +26,12 @@ const router = createBrowserRouter([
         path: '/',
         children: [
             {
-                path: '/home',
-                element: <Suspense fallback={<div>Loading</div>} ><HomePage /></Suspense>
+                path: '/Increment',
+                element: <Suspense fallback={<div>Loading</div>} ><Increment /></Suspense>
             },
             {
-                path: '',
-                element: <Suspense fallback={<div>Loading</div>} ><DefaultPage /></Suspense>
+                path: '/Decrement',
+                element: <Suspense fallback={<div>Loading</div>} ><Decrement /></Suspense>
             }
         ]
     }
