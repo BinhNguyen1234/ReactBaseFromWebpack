@@ -24,7 +24,7 @@ const configCommon = {
         new MiniCssExtractPlugin(),
         new webpack.ProvidePlugin({
             React: 'react',
-            _: 'lodash'
+            _: 'lodash',
         })
     ],
     module: {
