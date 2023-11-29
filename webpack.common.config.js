@@ -54,7 +54,9 @@ const configCommon = {
         static: {
             directory: path.join(_dirName, 'dist')
         },
-        historyApiFallback: true
+        historyApiFallback: true,
+        open: true,
+        https: true
     },
     optimization: {
         runtimeChunk: 'single'

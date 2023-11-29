@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 // import NavBar from '../layout/LayoutCommon'
 import { type ComponentType, Suspense, lazy } from 'react'
 import App from '@/app/app'
+import Home from './Home'
 
 const Increment = lazy(async () => {
     return await import('./Increment')
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: '/Decrement',
                 element: <Suspense fallback={<div>Loading</div>} ><Decrement /></Suspense>
+            },
+            {
+                path: '',
+                element: <Home></Home>
             }
         ]
     }
