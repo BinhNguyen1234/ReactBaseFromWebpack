@@ -47,7 +47,8 @@ const configCommon = {
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js'],
         alias: {
-            '@': path.resolve(_dirName, 'src')
+            '@': path.resolve(_dirName, 'src'),
+            '@store': path.resolve(_dirName, 'src','store')
         }
     },
     devServer: {

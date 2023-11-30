@@ -13,18 +13,18 @@ const counterSlice = createSlice({
         },
         other: {
             reducer (currentState, action) {
-                currentState +=
+                currentState.value += action.payload.value
             },
-            prepare (value): Omit<PayloadAction<any, string, any, any>, ' type'> {
-                return ({
+            prepare (value: number) {
+                console.log(value)
+                return {
                     payload: {
                         value
                     }
-                }) as any
+                } as Omit<PayloadAction<any, string, any, any>, 'type'>
             }
         }
     }
 })
-counterSlice.getInitialState()
 export default counterSlice.reducer
-export const { increment, decrement } = counterSlice.actions
+export const { increment, decrement, other } = counterSlice.actions
