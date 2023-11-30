@@ -24,17 +24,14 @@ const configCommon = {
         new MiniCssExtractPlugin(),
         new webpack.ProvidePlugin({
             React: 'react',
-            _: 'lodash',
+            _: 'lodash'
         })
     ],
     module: {
         rules: [
             {
                 test: /\.(ts|tsx)$/i,
-                use: [
-                    { loader: 'ts-loader' }
-                    // { loader: 'babel-loader' }
-                ],
+                use: [{ loader: 'babel-loader' }, { loader: 'ts-loader' }],
                 exclude: ['/node_modules/'],
                 sideEffects: true
             },
@@ -48,7 +45,7 @@ const configCommon = {
         extensions: ['.tsx', '.ts', '.jsx', '.js'],
         alias: {
             '@': path.resolve(_dirName, 'src'),
-            '@store': path.resolve(_dirName, 'src','store')
+            '@store': path.resolve(_dirName, 'src', 'store')
         }
     },
     devServer: {
