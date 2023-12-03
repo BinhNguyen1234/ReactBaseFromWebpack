@@ -16,10 +16,7 @@ const Decrement = lazy(async () => {
             rs(import('./Decrement'))
         }, 3000)
     })
-    const a = c.then(rs => {
-        return rs
-    })
-    return await (a as Promise<{ default: ComponentType<any> }>)
+    return (await (c.then((rs) => rs) as Promise<{ default: ComponentType<any> }>))
 })
 const router = createBrowserRouter([
     {

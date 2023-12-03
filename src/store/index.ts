@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './counter.slice'
 const store = configureStore({
     reducer: {
-        counterDomain: counterReducer
+        counter: counterReducer
     },
     devTools: true
 })
