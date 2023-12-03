@@ -40,7 +40,7 @@ const counterSlice = createSlice<payload, SliceCaseReducers<payload>, string>({
         })
     }
 })
-const test = createAsyncThunk('counter/increment', async (_, { dispatch, getState }) => {
+const test = createAsyncThunk('ctesst', async (_, { dispatch, getState }) => {
     const a = new Promise((rs, rj) => {
         setTimeout(() => { rs(8) }, 4000)
     })
