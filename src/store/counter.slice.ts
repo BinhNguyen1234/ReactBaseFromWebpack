@@ -15,7 +15,7 @@ const counterSlice = createSlice({
             currentState.value -= 1
         },
         other: {
-            reducer (currentState, action) {
+            reducer (currentState, action ) {
                 currentState.value += action.payload.value
             },
             prepare (value: number) {
