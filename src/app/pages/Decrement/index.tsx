@@ -9,7 +9,7 @@ export default function Decrement (): JSX.Element {
     return (
         <>
             <Title>Decrement Page</Title>
-            <button onClick={() => { dispatch(decrement({ type: 'incrementType', payload: 5 })) }} type="button">-</button>
+            <button onClick={() => { dispatch(decrement({ value: 5, status: 'none' })) }} type="button">-</button>
             <Value>{counter.value}</Value>
         </>
     )
