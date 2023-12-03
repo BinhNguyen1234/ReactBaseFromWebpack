@@ -1,4 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
+interface payload {
+    value: number
+}
 const counterSlice = createSlice({
     name: 'counter',
     initialState: {
@@ -21,7 +24,7 @@ const counterSlice = createSlice({
                     payload: {
                         value
                     }
-                } as Omit<PayloadAction<any, string, any, any>, 'type'>
+                } as Omit<PayloadAction<payload, string, any, any>, 'type'>
             }
         }
     }
