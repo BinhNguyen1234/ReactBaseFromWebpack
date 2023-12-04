@@ -10,12 +10,6 @@ const counterSlice = createSlice<payload, SliceCaseReducers<payload>, string>({
         status: 'none'
     },
     reducers: {
-        
-        tesstReducer(){
-            return ()=>{
-                
-            }
-        },
         increment: (currentState: payload) => {
             currentState.value += 1
         },
