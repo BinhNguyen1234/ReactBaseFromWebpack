@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux'
-import type { TGlobalState } from '@/store'
+import { useAppDispatch, useAppSelector } from '@/hook/store.hook'
+import type { RootState } from '@/store'
 import { decrement } from '@/store/counter.slice'
 import Title from '@/UI/Title'
 import Value from '@/UI/Value'
 export default function Decrement (): JSX.Element {
-    const counter = useSelector((state: TGlobalState) => state.counter)
-    const dispatch = useDispatch()
+    const counter = useAppSelector((state: RootState) => state.counter)
+    const dispatch = useAppDispatch()
     return (
         <>
             <Title>Decrement Page</Title>

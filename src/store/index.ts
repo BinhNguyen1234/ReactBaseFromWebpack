@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './counter.slice'
-import  {apiSlice}  from '@/api'
+import { apiSlice } from '@/api'
+import { exampleMiddleware, exampleMiddleware2 } from './middleware'
 const store = configureStore({
     reducer: {
         counter: counterReducer,
@@ -8,8 +9,9 @@ const store = configureStore({
     },
     devTools: true,
     middleware: (dfMiddleWare) =>
-    dfMiddleWare().concat(apiSlice.middleware)
+        dfMiddleWare().concat(apiSlice.middleware, exampleMiddleware, exampleMiddleware2)
 })
 
 export default store
-export declare type TGlobalState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
