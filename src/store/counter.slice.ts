@@ -10,6 +10,12 @@ const counterSlice = createSlice<payload, SliceCaseReducers<payload>, string>({
         status: 'none'
     },
     reducers: {
+        
+        tesstReducer(){
+            return ()=>{
+                
+            }
+        },
         increment: (currentState: payload) => {
             currentState.value += 1
         },
@@ -47,6 +53,7 @@ const test = createAsyncThunk('ctesst', async (_, { dispatch, getState }) => {
     const af = await a.then(result => result)
     return af
 })
+
 export { test }
 export default counterSlice.reducer
 export const { increment, decrement, other } = counterSlice.actions
