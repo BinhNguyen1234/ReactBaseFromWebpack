@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/hook/store.hook'
 import { increment, other, test } from '@/store/counter.slice'
 import { useGetNameQuery } from '@/api/index'
+import { check } from '@/store/test.slice'
 export default function Increment (): JSX.Element {
     const { value, status } = useAppSelector((state) => { return state.counter })
     const dispatch = useAppDispatch()
@@ -17,6 +18,7 @@ export default function Increment (): JSX.Element {
             <div>Increment Page</div>
             <button onClick={() => { dispatch(other(5)) }} type="button">+5</button>
             {/* <button onClick={() => { refetch() }} type="button">Refetch</button> */}
+            <button onClick={() => { dispatch<any>(check(null)) }} type="button">check dispatch</button>
             <button onClick={() => { dispatch<any>(test()) }} type="button">test</button>
             <button onClick={() => { dispatch(increment(null)) }} type="button">+</button>
             <div>{status}</div>

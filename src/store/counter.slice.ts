@@ -1,4 +1,7 @@
 import { type PayloadAction, createSlice, type SliceCaseReducers, createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
+import { apiSlice } from '@/api'
+import testSlice from './test.slice'
 interface payload {
     value: number
     status: 'none' | 'pending' | 'done'
@@ -34,18 +37,22 @@ const counterSlice = createSlice<payload, SliceCaseReducers<payload>, string>({
     extraReducers (builder) {
         builder.addCase(test.pending, (crState, action) => {
             crState.status = 'pending'
+            console.log(action)
         })
         builder.addCase(test.fulfilled, (crState, action) => {
             crState.status = 'done'
+            console.log(action)
+        })
+        builder.addCase(testSlice.actions.check, (state, action)=>{
+            console.log('fffff')
+        })
+        builder.addMatcher(apiSlice.endpoints.getName.matchFulfilled,(crState, actions)=>{
+            console.log(1232313)
         })
     }
 })
-const test = createAsyncThunk('ctesst', async (_, { dispatch, getState }) => {
-    const a = new Promise((rs, rj) => {
-        setTimeout(() => { rs(8) }, 4000)
-    })
-    const af = await a.then(result => result)
-    return af
+const test = createAsyncThunk('testthunk', async (_, { dispatch, getState }) => {
+    return (await axios.get('https://raw.githubusercontent.com/BinhNguyen1234/api/master/info-mockup.json')).data
 })
 
 export { test }

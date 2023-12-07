@@ -1,6 +1,5 @@
 import {
     BaseQueryFn,
-    QueryReturnValue
 } from '@reduxjs/toolkit/dist/query/baseQueryTypes'
 import { BaseQueryApi } from '@reduxjs/toolkit/dist/query/react'
 import { MaybePromise } from '@reduxjs/toolkit/dist/query/tsHelpers'
@@ -15,10 +14,10 @@ let AxiosAdapterFectchBaseQuery = (
     params?: AxiosRequestConfig['params']
     headers?: AxiosRequestConfig['headers']
 }> => {
-    return async ({ url, method, data, params, headers }) => {
+    return async ({ url, method, data, params, headers }: {url: string, method: 'get'|'post',data: any, params: string, headers: any}) => {
         try {
             const result = await axios({
-                url: baseUrl + url,
+                url: baseUrl + '/' + url,
                 method,
                 data,
                 params,
