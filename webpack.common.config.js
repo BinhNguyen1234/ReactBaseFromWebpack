@@ -54,7 +54,9 @@ const configCommon = {
         },
         historyApiFallback: true,
         open: true,
-        https: true
+        allowedHosts: [
+            "login.binh.com"
+        ]
     },
     optimization: {
         runtimeChunk: 'single'

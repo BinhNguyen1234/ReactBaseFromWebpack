@@ -1,10 +1,10 @@
-import NavBar from '@/layout/LayoutCommon'
-import { Outlet } from 'react-router-dom'
+import FormLogin from '@/UI/LoginForm'
+// import NavBar from '@/layout/LayoutCommon'
+// import { Outlet } from 'react-router-dom'
 function App (): JSX.Element {
-    return <>
-        <NavBar/>
-        <Outlet/>
-    </>
+    return (<>
+        <FormLogin></FormLogin>
+    </>)
 }
 
 export default App
